@@ -41,16 +41,24 @@ $$A^{[2]} = \text{Softmax}(Z^{[2]})$$
 
 ### 2. Backward Propagation
 We calculate the gradients to update weights using the Chain Rule.
+
 $$dZ^{[2]} = A^{[2]} - Y$$
+
 $$dW^{[2]} = \frac{1}{m} dZ^{[2]} A^{[1]T}$$
+
 $$dB^{[2]} = \frac{1}{m} \sum dZ^{[2]}$$
+
 $$dZ^{[1]} = W^{[2]T} dZ^{[2]} \odot g'(Z^{[1]})$$
+
 $$dW^{[1]} = \frac{1}{m} dZ^{[1]} X^T$$
+
 $$dB^{[1]} = \frac{1}{m} \sum dZ^{[1]}$$
 
 ### 3. Parameter Updates (Gradient Descent)
 $$W^{[i]} = W^{[i]} - \alpha \cdot dW^{[i]}$$
+
 $$B^{[i]} = B^{[i]} - \alpha \cdot dB^{[i]}$$
+
 *Where $\alpha$ is the learning rate.* 
 
 ## 📂 File Structure
@@ -86,4 +94,4 @@ After training for **1000 iterations** with a learning rate of **0.1**:
 
 ## 👨‍💻 Author
 
-**P. [cite_start]Toshith** [cite: 56]
+**P. Toshith** 
