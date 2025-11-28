@@ -2,12 +2,12 @@
 
 This repository contains a raw implementation of a 2-layer Neural Network built entirely from scratch using **Python** and **NumPy**. No deep learning frameworks (like TensorFlow or PyTorch) were used. The goal of this project is to demystify the "black box" of neural networks by implementing the underlying mathematics, forward propagation, and backpropagation algorithms manually.
 
-[cite_start]The model is trained on the MNIST dataset to recognize handwritten digits with an accuracy of **~90.35%**[cite: 155].
+The model is trained on the MNIST dataset to recognize handwritten digits with an accuracy of **~90.35%**.
 
 ## 🧠 Project Overview
 
 * **Language:** Python
-* [cite_start]**Libraries:** NumPy (Linear Algebra), Pandas (Data Loading) [cite: 60, 61]
+* **Libraries:** NumPy (Linear Algebra), Pandas (Data Loading)
 * **Dataset:** MNIST (Digit Recognition)
 * **Architecture:** 2-Layer Perceptron (Input -> Hidden -> Output)
 * **Optimization:** Gradient Descent
@@ -21,7 +21,7 @@ The network consists of an input layer (784 features), one hidden layer, and an 
 | **Hidden (Layer 1)** | 10 | ReLU | (10, m) |
 | **Output (Layer 2)** | 10 | Softmax | (10, m) |
 
-[cite_start]*Note: `m` represents the number of training examples.* [cite: 87, 88, 91]
+*Note: `m` represents the number of training examples.* 
 
 ## 🧮 The Math (Under the Hood)
 
@@ -29,11 +29,14 @@ This implementation follows standard Forward and Backward propagation derivation
 
 ### 1. Forward Propagation
 The data flows from input to output to generate a prediction.
+
 $$Z^{[1]} = W^{[1]} X + B^{[1]}$$
+
 $$A^{[1]} = \text{ReLU}(Z^{[1]})$$
+
 $$Z^{[2]} = W^{[2]} A^{[1]} + B^{[2]}$$
+
 $$A^{[2]} = \text{Softmax}(Z^{[2]})$$
-[cite_start][cite: 12, 13, 20, 25]
 
 
 ### 2. Backward Propagation
@@ -44,12 +47,11 @@ $$dB^{[2]} = \frac{1}{m} \sum dZ^{[2]}$$
 $$dZ^{[1]} = W^{[2]T} dZ^{[2]} \odot g'(Z^{[1]})$$
 $$dW^{[1]} = \frac{1}{m} dZ^{[1]} X^T$$
 $$dB^{[1]} = \frac{1}{m} \sum dZ^{[1]}$$
-[cite_start][cite: 46, 48, 50, 53, 113, 114, 115, 116]
 
 ### 3. Parameter Updates (Gradient Descent)
 $$W^{[i]} = W^{[i]} - \alpha \cdot dW^{[i]}$$
 $$B^{[i]} = B^{[i]} - \alpha \cdot dB^{[i]}$$
-[cite_start]*Where $\alpha$ is the learning rate.* [cite: 43, 44]
+*Where $\alpha$ is the learning rate.* 
 
 ## 📂 File Structure
 
@@ -78,7 +80,7 @@ $$B^{[i]} = B^{[i]} - \alpha \cdot dB^{[i]}$$
 ## 📊 Results
 
 After training for **1000 iterations** with a learning rate of **0.1**:
-* [cite_start]**Final Accuracy:** 90.35% [cite: 151, 155]
+**Final Accuracy:** 90.35% 
 
 
 
